@@ -7,57 +7,31 @@ export default function SideBar() {
   const links = [
     {
       name: "Home",
-      icon: <ciIcons.CiHome fontSize={20} color="#ffffff" />,
+      icon: <ciIcons.CiHome fontSize={23} color="#ffffff" />,
       path: "/",
     },
     {
       name: "Albums",
-      icon: <fiIcons.FiDisc fontSize={20} color="#ffffff" />,
+      icon: <fiIcons.FiDisc fontSize={23} color="#ffffff" />,
       path: "/albums",
     },
     {
       name: "Studios",
-      icon: <fiIcons.FiSpeaker fontSize={20} color="#ffffff" />,
+      icon: <fiIcons.FiSpeaker fontSize={23} color="#ffffff" />,
       path: "/studios",
     },
     {
       name: "News",
-      icon: <fiIcons.FiPaperclip fontSize={20} color="#ffffff" />,
+      icon: <fiIcons.FiPaperclip fontSize={23} color="#ffffff" />,
       path: "/newsletter",
     },
   ];
 
-  const genreList = [
-    "Afro-pop",
-    "hip-pop",
-    "pop",
-    "gospel",
-    "rock",
-    "reggae",
-    "amapiano",
-    "metal",
-    "RnB",
-    "Mangelengele",
-    "reggaes",
-  ];
 
-  const artists = [
-    "Namadingo",
-    "Eli Njuchi",
-    "Ranken",
-    "Ethel Kamwendo Banda",
-    "Lawi",
-    "Temwa",
-    "Kraizy G",
-    "Gwamba",
-    "Success",
-    "Suffix",
-    "Zenze",
-  ];
   return (
     <div className=" bg-[#131314] border-1 h-full pt-5">
       <h2 className="text-lg font-bold text-white ml-3">Self Space</h2>
-      <ul>
+      <ul className="mt-4">
         {links.map((link) => {
           return (
             <NavLink to={link["path"]} key={link["name"]}>
@@ -68,7 +42,7 @@ export default function SideBar() {
               >
                 <div className="flex flex-row  justify-center items-center ml-[5px]">
                   <div className=" pr-3">{link["icon"]}</div>
-                  <div className=" text-[#ffffff] text-sm">{link["name"]}</div>
+                  <div className=" text-[#ffffff] text-md">{link["name"]}</div>
                 </div>
               </li>
             </NavLink>

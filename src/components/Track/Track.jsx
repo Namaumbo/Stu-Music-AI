@@ -11,7 +11,7 @@ export default function Track() {
         <img
           src="play.png"
           alt="play"
-          className="absolute bottom-[30%] right-4 w-12"
+          className="absolute bottom-[20%] right-4 w-12"
         />
       </div>
       <div className="flex flex-col pt-2">
