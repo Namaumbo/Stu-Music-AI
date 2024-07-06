@@ -5,8 +5,13 @@ export default function AlbumComponent() {
     <div className=" flex justify-center border-t-4 w-[14rem] rounded-lg border-[#8a7a61]">
       <div className=" flex justify-center border-t-4 w-[14.5rem] rounded-lg border-[#648594]">
         <div className="w-[15rem] rounded overflow-hidden shadow-lg bg-white dark:bg-zinc-800">
-          <div className="relative">
-            <img className="w-full" src="photo2.jpg" alt="Video Thumbnail" />
+          <div className=" relative">
+            <img
+              className="object-cover h-auto w-full rounded-md shadow-md"
+              src="photo2.jpg"
+              alt="Video Thumbnail"
+              id="artwork"
+            />
             <div className="absolute top-8  ">
               <img className="w-[6rem]" src="logo-final.png" alt="Vevo Logo" />
             </div>
