@@ -1,5 +1,5 @@
 import Track from "../Track/Track";
-import "./sliderStyle.css";
+// import "./sliderStyle.css";
 
 export default function SliderComponet() {
   return (

@@ -6,7 +6,6 @@ export default function Track() {
         src="photo2.jpg"
         alt="artwork"
         className="object-cover h-auto w-full rounded-md shadow-md"
-        id="artwork"
       />
     
       <div className="overlay absolute inset-0 flex justify-center items-center opacity-0 hover:opacity-100">
