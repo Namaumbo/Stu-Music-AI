@@ -33,7 +33,7 @@ export default function SideBar() {
       name: "News",
       icon: <fiIcons.FiPaperclip fontSize={23} color="#ffffff" />,
       path: "/newsletter",
-      count : 0
+      count : 6
     },
   ];
 
@@ -56,8 +56,8 @@ export default function SideBar() {
                 </div>
                 <div className=" text-[#ffffff] text-md ml-3">
                   {link["count"] > 0 && (
-                    <div className="bg-[#ff0000] p-[0.6rem] text-[#ffffff] text-xs rounded-full h-4 w-4 flex justify-center items-center">
-                      {link["count"]}
+                    <div className="bg-[#ff0000] p-[0.7rem] text-[#ffffff] text-xs rounded-full h-4 w-full flex justify-center items-center">
+                      {link["count"]} new
                     </div>
                   )}
                   </div>
