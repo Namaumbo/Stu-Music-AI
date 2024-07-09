@@ -1,5 +1,5 @@
 import "./track.css";
-export default function Track() {
+export default function Track({props}) {
   return (
     <div className="track-container lg:w-45 relative">
       <img
@@ -16,9 +16,9 @@ export default function Track() {
         />
       </div>
       <div className="flex flex-col pt-2">
-        <span className=" text-sm font-semibold">Emtee</span>
+        <span className=" text-sm font-semibold">{props.artist}</span>
         <h4 className="text-xs text-zinc-400">
-          Sounds of birds, rain, and forest ambience.
+          {props.title}
         </h4>
       </div>
     </div>
