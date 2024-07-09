@@ -1,4 +1,3 @@
-import PlayerComponent from "../components/player/PlayerComponent";
 import SliderComponet from "../components/Slider/SliderComponent";
 
 const Musictype = () => {
@@ -60,7 +59,6 @@ export default function HomePage(params) {
           <SliderComponet />
         </div>
       </div>
-      <PlayerComponent/>
     </div>
   );
 }

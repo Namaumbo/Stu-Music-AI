@@ -7,6 +7,7 @@ import AlbumPage from "./pages/AlbumsPage";
 import VotingPage from "./pages/VotingPage";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import HomePage from "./pages/HomePage";
+import PlayerComponent from "./components/player/PlayerComponent";
 
 const Layout = () => {
   return (
@@ -18,6 +19,9 @@ const Layout = () => {
         </div>
         <div className="w-[85%] space-y-3 h-screen overflow-y-auto">
           <Outlet />
+        </div>
+        <div>
+          <PlayerComponent/>
         </div>
       </div>
 
