@@ -2,11 +2,11 @@ import { Divider } from "@chakra-ui/react";
 import { BiLike } from "react-icons/bi";
 import { SlUserFollow } from "react-icons/sl";
 
-
 export default function AlbumPage() {
   const buttonClasses = "text-zinc-400 hover:text-white";
   const bgButtonClasses = "bg-zinc-700 text-white px-3 py-1 rounded-md";
   const textGreenClasses = "text-gray-500";
+  const tableItemClass = "pt-3 pb-3";
   return (
     <>
       <div className=" text-white p-4">
@@ -33,11 +33,10 @@ export default function AlbumPage() {
                 <img aria-hidden="true" alt="play" src="play.png" />
               </button>
               <button className={textGreenClasses}>
-              <BiLike  size='35px'/> 
+                <BiLike size="35px" />
               </button>
               <button className={textGreenClasses}>
-              <SlUserFollow size='25px' />
-
+                <SlUserFollow size="25px" />
               </button>
             </div>
           </div>
@@ -54,19 +53,19 @@ export default function AlbumPage() {
               </tr>
             </thead>
             <tbody>
-              <tr className="pt-12 ">
-                <td>1</td>
-                <td>Song Title 1</td>
-                <td>Album Name 1</td>
-                <td>Jan 1, 2023</td>
-                <td>3:21</td>
+              <tr className="hover:bg-[#718096] cursor-pointer">
+                <td className={tableItemClass}>1</td>
+                <td className={tableItemClass}>Kuli bwanji </td>
+                <td className={tableItemClass}>Praise and Harmony</td>
+                <td className={tableItemClass}>Jan 1, 2023</td>
+                <td className={tableItemClass}>3:21</td>
               </tr>
-              <tr className="space-y-5">
-                <td>2</td>
-                <td>Song Title 2</td>
-                <td>Album Name 2</td>
-                <td>Jan 2, 2023</td>
-                <td>1:23</td>
+              <tr className="hover:bg-[#718096] cursor-pointer">
+                <td className={tableItemClass}>2</td>
+                <td className={tableItemClass}>Days of Elijah</td>
+                <td className={tableItemClass}>Praise and Harmony</td>
+                <td className={tableItemClass}>Jan 1, 2023</td>
+                <td className={tableItemClass}>3:21</td>
               </tr>
             </tbody>
           </table>

@@ -1,7 +1,9 @@
 import * as ciIcons from "react-icons/ci";
 import * as fiIcons from "react-icons/fi";
 import { Tag, TagLabel, Divider } from "@chakra-ui/react";
-import "./siderbar.css"
+import "./siderbar.css";
+import { NavLink } from "react-router-dom";
+
 export default function SideBar() {
   const links = [
     {
@@ -55,15 +57,37 @@ export default function SideBar() {
   ];
   return (
     <div className=" max-h-full ">
-      <ul className="list-none m-8">
+      <ul>
+        {links.map((link) => {
+          return (
+            <NavLink to={link["path"]}>
+              <li
+                key={link["name"]}
+                className="mb-5 flex flex-row  items-center "
+                id="hovered-list"
+              >
+                <div className="flex flex-row  justify-center items-center">
+                  <div className=" pr-3">{link["icon"]}</div>
+                  <div className=" text-[#cad2e0]">{link["name"]}</div>
+                </div>
+              </li>
+            </NavLink>
+          );
+        })}
+      </ul>
+
+      {/* <ul className="list-none m-8"> */}
+
+      {/*       
         {links.map((item, index) => (
           <li key={index} className="mb-5 flex flex-row  items-center " id="hovered-list">
             <div className=" pr-3">{item["icon"]}</div>
-            <div className=" font-bold text-[#cad2e0]">{item["name"]}</div>
+            <div className=" text-[#cad2e0]">{item["name"]}</div>
           </li>
         ))}
-      </ul>
+      </ul> */}
 
+      {/* 
       <Divider />
       <h4 className="mt-3 ml-2 text-xl text-gray-400">Available Genres</h4>
       <div className=" py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 ">
@@ -92,7 +116,7 @@ export default function SideBar() {
             <fiIcons.FiPlayCircle />
           </Tag>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }
