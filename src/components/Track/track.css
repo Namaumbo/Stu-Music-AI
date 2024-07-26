@@ -1,27 +1,24 @@
 .track-container {
-    position: relative;
-    cursor: pointer;
-    padding: 10px;
+  position: relative;
+  cursor: pointer;
+  padding: 10px;
 }
-.track-container:hover{
-   background-color: #616d7d1d;
-   border-radius: 5px;
+.track-container:hover {
+  background-color: #616d7d1d;
+  border-radius: 5px;
 }
-#artwork{
-    /* border: 0.5px solid #64748B; */
-}
+
 .track-container img {
-    display: block;
+  display: block;
 }
 
 .overlay {
-    opacity: 0.7;
-    position: absolute;
-    background-color: transparent;
-    transition: opacity 0.2s ease;
+  opacity: 0.7;
+  position: absolute;
+  background-color: transparent;
+  transition: opacity 0.2s ease;
 }
 
 .track-container:hover .overlay {
-    opacity: 1;
+  opacity: 1;
 }
-

@@ -3,21 +3,25 @@ import "./App.css";
 import NavBarComponent from "./components/navbar/NavBarComponet";
 import GreetingComponent from "./components/GreetingComponent";
 import SideBar from "./components/sidebar/SideBar";
-import SliderComponet from "./components/Slider/SliderComponent";
 import AlbumPage from "./pages/AlbumsPage";
 import VotingPage from "./pages/VotingPage";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import PlayerComponent from "./components/player/PlayerComponent";
 
 const Layout = () => {
   return (
     <>
       <NavBarComponent />
       <div className="flex">
-        <div className="w-1/4 border-r-[0.5px] border-r-[#2b2b2b] sticky  overflow-y-auto">
+        <div className="w-[15%] border-r-[0.5px]  max-h-full">
           <SideBar />
         </div>
-        <div className="w-3/4  pl-5 space-y-3 h-screen overflow-y-auto">
+        <div className="w-[85%] space-y-3 h-screen overflow-y-auto">
           <Outlet />
+        </div>
+        <div>
+          <PlayerComponent/>
         </div>
       </div>
 
@@ -26,7 +30,7 @@ const Layout = () => {
       {/*  */}
       {/* </div> */}
       {/* <div className="w-3/4  pl-5 space-y-3"> */}
-      {/* <SliderComponet /> */}
+      {/*  */}
 
       {/* <VotingPage /> */}
       {/* <AlbumPage/> */}
@@ -79,7 +83,7 @@ const App = () => {
       children: [
         {
           path: "/",
-          element: <VotingPage />,
+          element: <HomePage />,
         },
         {
           path: "/albums",
