@@ -23,15 +23,17 @@ export default function PlayerComponent() {
         </div>
       </div>
       <div className="controls">
-        <li className="btn-control">
-          <fiIcons.FiRewind fontSize={40} color="grey" />
-        </li>
-        <li className="btn-control">
-          <fiIcons.FiPlayCircle fontSize={55} color="grey" />
-        </li>
-        <li className="btn-control">
-          <fiIcons.FiFastForward fontSize={40} color="grey" />
-        </li>
+        <div className="text-center flex flex-row justify-center items-center">
+          <li className="btn-control">
+            <fiIcons.FiRewind fontSize={40} color="grey" />
+          </li>
+          <li className="btn-control">
+            <fiIcons.FiPlayCircle fontSize={55} color="grey" />
+          </li>
+          <li className="btn-control">
+            <fiIcons.FiFastForward fontSize={40} color="grey" />
+          </li>
+        </div>
 
         {/* <Slider
           size="big"
