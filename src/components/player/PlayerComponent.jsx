@@ -5,6 +5,9 @@ import * as fiIcons from "react-icons/fi";
 import { PlayerAtom } from "../../core/stores/Player";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { SongDescription } from "../../core/stores/Player";
+import { MdOutlinePlayCircleOutline } from "react-icons/md";
+import { BsArrowRepeat } from "react-icons/bs";
+import { PiShuffleThin } from "react-icons/pi";
 
 export default function PlayerComponent() {
   const [btnState, setBtnState] = useRecoilState(PlayerAtom);
@@ -23,16 +26,24 @@ export default function PlayerComponent() {
         </div>
       </div>
       <div className="controls">
-        <div className="text-center flex flex-row justify-center items-center">
-          <li className="btn-control">
-            <fiIcons.FiRewind fontSize={40} color="grey" />
-          </li>
-          <li className="btn-control">
-            <fiIcons.FiPlayCircle fontSize={55} color="grey" />
-          </li>
-          <li className="btn-control">
-            <fiIcons.FiFastForward fontSize={40} color="grey" />
-          </li>
+        <div className="text-center items-center mb-4">
+          <ul className="flex flex-row justify-center items-center">
+            <li className="btn-control">
+              <PiShuffleThin fontSize={30} color="white" />
+            </li>
+            <li className="btn-control">
+              <fiIcons.FiRewind fontSize={30} color="white" />
+            </li>
+            <li className="btn-control">
+              <MdOutlinePlayCircleOutline fontSize={50} color="white" />
+            </li>
+            <li className="btn-control">
+              <fiIcons.FiFastForward fontSize={30} color="white" />
+            </li>
+            <li className="btn-control">
+              <BsArrowRepeat fontSize={30} color="white" />
+            </li>
+          </ul>
         </div>
 
         {/* <Slider

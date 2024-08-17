@@ -12,7 +12,7 @@ export default function SideBar() {
       count : 0
     },
     {
-      name:"Recentry Added",
+      name:"Recently",
       icon: <ciIcons.CiHeadphones fontSize={23} color="#ffffff" />,
       path: "/recently-added",
       count : 4
