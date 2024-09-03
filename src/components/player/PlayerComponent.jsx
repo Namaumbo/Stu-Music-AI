@@ -1,5 +1,4 @@
 import "./player.css";
-// import pic from "../../assets/photo2.jpg";
 // import { Slider, Stack } from "@mui/material";
 import * as fiIcons from "react-icons/fi";
 import { PlayerAtom } from "../../core/stores/Player";
@@ -19,29 +18,29 @@ export default function PlayerComponent() {
   return (
     <div className="bg-black h-[10%] w-full fixed bottom-0 left-0 flex flex-row items-center">
       <div className="artwork-song-info">
-        <img src={song.artwork} alt="artwork" className="artwork-song-icon" />
+        <img src="/photo2.jpg" alt="artwork" className="w-14 h-14 rounded-sm" />
         <div className="info">
-          <span>{song.title}</span>
-          <p>{song.artist}</p>
+          <p className="text-white font-semibold">The Velvet Echoes</p>
+          <p className="text-sm font-semibold text-gray-700 ">Midnight Serenade</p>
         </div>
       </div>
       <div className="controls">
         <div className="text-center items-center mb-4">
           <ul className="flex flex-row justify-center items-center">
             <li className="btn-control">
-              <PiShuffleThin fontSize={30} color="white" />
+              <PiShuffleThin fontSize={20} color="white" />
             </li>
             <li className="btn-control">
-              <fiIcons.FiRewind fontSize={30} color="white" />
+              <fiIcons.FiRewind fontSize={20} color="white" />
             </li>
             <li className="btn-control">
-              <MdOutlinePlayCircleOutline fontSize={50} color="white" />
+              <MdOutlinePlayCircleOutline fontSize={30} color="white" />
             </li>
             <li className="btn-control">
-              <fiIcons.FiFastForward fontSize={30} color="white" />
+              <fiIcons.FiFastForward fontSize={20} color="white" />
             </li>
             <li className="btn-control">
-              <BsArrowRepeat fontSize={30} color="white" />
+              <BsArrowRepeat fontSize={20} color="white" />
             </li>
           </ul>
         </div>
@@ -60,13 +59,14 @@ export default function PlayerComponent() {
           <fiIcons.FiVolume2 fontSize={40} color="grey" />
         </Stack>
       </div>
+   
+    </div> */}
       <fiIcons.FiX
-        fontSize={40}
+        fontSize={30}
         color="grey"
         id="cancel"
         onClick={handelCancel}
       />
-    </div> */}
     </div>
   );
 }

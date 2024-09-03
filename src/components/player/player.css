@@ -38,11 +38,6 @@
     font-weight: lighter;
 }
 
-.info p {
-    color: rgb(133, 131, 131);
-    font-weight: bolder;
-}
-
 .controls {
     flex: 1.6;
     margin-top: 1em;

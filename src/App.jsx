@@ -8,6 +8,7 @@ import VotingPage from "./pages/VotingPage";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import PlayerComponent from "./components/player/PlayerComponent";
+import RecentSongs from "./pages/RecentSongs";
 
 const Layout = () => {
   return (
@@ -92,6 +93,10 @@ const App = () => {
         {
           path: "/:id",
           element: <VotingPage />,
+        },
+        {
+          path: "/recently-added",
+          element: <RecentSongs />,
         },
       ],
     },
