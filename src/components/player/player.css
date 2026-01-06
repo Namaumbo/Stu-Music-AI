@@ -38,11 +38,6 @@
     font-weight: lighter;
 }
 
-.info p {
-    color: rgb(133, 131, 131);
-    font-weight: bolder;
-}
-
 .controls {
     flex: 1.6;
     margin-top: 1em;
@@ -57,10 +52,20 @@
 
 .btn-control {
     display: inline;
+    cursor: pointer;
+}
+.btn-control {
+    transition: transform 0.2s ease;
 }
 
-.btn-control:nth-child(2) {
-    margin: 0 3em 0 3em;
+.btn-control:hover {
+    transform: scale(1.1);
+}
+.btn-control{
+    margin: 0 0.5rem 0 0.5rem;
+}
+.btn-control:nth-child(3) {
+    margin: 0 1em 0 1em;
 }
 #cancel{
     padding-top:10px;

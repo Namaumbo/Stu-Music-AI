@@ -8,21 +8,22 @@ import VotingPage from "./pages/VotingPage";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import PlayerComponent from "./components/player/PlayerComponent";
+import RecentSongs from "./pages/RecentSongs";
 
 const Layout = () => {
   return (
     <>
       <NavBarComponent />
-      <div className="flex">
+      <div className="flex mb-12">
         <div className="w-[15%] border-r-[0.5px]  max-h-full">
           <SideBar />
         </div>
-        <div className="w-[85%] space-y-3 h-screen overflow-y-auto">
+        <div className="w-[85%] space-y-3 h-screen max-h-full overflow-y-scroll ">
           <Outlet />
         </div>
-        <div>
-          <PlayerComponent/>
-        </div>
+      </div>
+      <div className="">
+        <PlayerComponent />
       </div>
 
       {/* */}
@@ -92,6 +93,10 @@ const App = () => {
         {
           path: "/:id",
           element: <VotingPage />,
+        },
+        {
+          path: "/recently-added",
+          element: <RecentSongs />,
         },
       ],
     },
