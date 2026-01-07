@@ -1,16 +1,15 @@
-import "./player.css";
+import "../styles/PlayerComponent.css";
 // import { Slider, Stack } from "@mui/material";
 import * as fiIcons from "react-icons/fi";
-import { PlayerAtom } from "../../core/stores/Player";
+import { PlayerAtom, SongDescription } from "@/features/player/state/player.atoms.js";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { SongDescription } from "../../core/stores/Player";
 import { MdOutlinePlayCircleOutline } from "react-icons/md";
 import { BsArrowRepeat } from "react-icons/bs";
 import { PiShuffleThin } from "react-icons/pi";
 
 export default function PlayerComponent() {
   const [btnState, setBtnState] = useRecoilState(PlayerAtom);
-  const [song, setSong] = useRecoilState(SongDescription);
+  const song = useRecoilValue(SongDescription);
 
   const handelCancel = () => {
     setBtnState(!btnState);
@@ -20,8 +19,12 @@ export default function PlayerComponent() {
       <div className="artwork-song-info">
         <img src="/photo2.jpg" alt="artwork" className="w-14 h-14 rounded-sm" />
         <div className="info">
-          <p className="text-white font-semibold">The Velvet Echoes</p>
-          <p className="text-sm font-semibold text-gray-700 ">Midnight Serenade</p>
+          <p className="text-white font-semibold">
+            {song.artist || "The Velvet Echoes"}
+          </p>
+          <p className="text-sm font-semibold text-gray-700 ">
+            {song.title || "Midnight Serenade"}
+          </p>
         </div>
       </div>
       <div className="controls">

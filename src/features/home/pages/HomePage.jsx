@@ -1,4 +1,4 @@
-import SliderComponet from "../components/Slider/SliderComponent";
+import SliderComponet from "@/features/tracks/components/SliderComponent.jsx";
 
 const Musictype = () => {
   const Genres = [
@@ -37,7 +37,7 @@ const Musictype = () => {
     </>
   );
 };
-export default function HomePage(params) {
+export default function HomePage() {
   return (
     <div className="h-full bg-zinc-900 text-white ">
       <div className="p-4">

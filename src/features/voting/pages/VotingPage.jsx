@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { Button } from "@chakra-ui/react";
 export default function VotingPage() {
 
