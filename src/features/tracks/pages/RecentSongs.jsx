@@ -1,6 +1,6 @@
 const RecentSongs = () => {
   return (
-    <div>
+    <div className="h-full overflow-y-auto">
       <div className="bg-background p-4">
         <h2 className="text-4xl font-bold text-foreground mb-4 text-white ">
           Recently Added

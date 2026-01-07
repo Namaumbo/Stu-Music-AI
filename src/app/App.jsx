@@ -10,13 +10,13 @@ import RecentSongs from "@/features/tracks/pages/RecentSongs.jsx";
 
 const Layout = () => {
   return (
-    <>
+    <div className="h-screen flex flex-col overflow-hidden">
       <NavBarComponent />
-      <div className="flex mb-12">
-        <div className="w-[15%] border-r-[0.5px]  max-h-full">
+      <div className="flex flex-1 overflow-hidden pb-[10vh]">
+        <div className="w-[15%] border-r-[0.5px] max-h-full overflow-y-auto">
           <SideBar />
         </div>
-        <div className="w-[85%] space-y-3 h-screen max-h-full overflow-y-scroll ">
+        <div className="w-[85%] h-full overflow-hidden">
           <Outlet />
         </div>
       </div>
@@ -33,7 +33,7 @@ const Layout = () => {
 
       {/* <VotingPage /> */}
       {/* <AlbumPage/> */}
-      {/*  <GreetingComponent />
+      {/*  
             <div>
               <div className="flex flex-row justify-between px-2">
                 <h4 className=" tracking-tighter text-2xl font-bold text-gray-200">
@@ -72,7 +72,7 @@ const Layout = () => {
       {/* </div>
       </div> */}
       {/* </> */}
-    </>
+    </div>
   );
 };
 const App = () => {

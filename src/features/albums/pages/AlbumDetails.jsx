@@ -6,7 +6,7 @@ export default function AlbumDetails() {
   const tableHeader = "text-left font-[400] px-4";
   return (
     <>
-      <div className=" text-white p-4">
+      <div className="h-full overflow-y-auto text-white p-4">
         <div className="flex flex-row items-center  ">
           <div className="w-1/4">
             <img src="photo2.jpg" alt="Playlist Cover" className="rounded-lg" />

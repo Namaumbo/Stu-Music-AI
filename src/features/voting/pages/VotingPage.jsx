@@ -5,6 +5,7 @@ export default function VotingPage() {
 
   return (
     <>
+      <div className="h-full overflow-y-auto">
       <main className="flex flex-col items-center justify-center  bg-[#0d1117] py-6">
         <div className="max-w-md w-full space-y-8 px- md:px-0">
           <div className="text-center">
@@ -82,6 +83,7 @@ export default function VotingPage() {
             </tr>
           </tbody>
         </table>
+      </div>
       </div>
     </>
   );
