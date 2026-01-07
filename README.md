@@ -1,4 +1,3 @@
-
 # React + Vite + Chakra UI + Recoil + TailwindCSS Starter
 
 This project is a modern React boilerplate configured with [Vite](https://vitejs.dev/), [Chakra UI](https://chakra-ui.com/), [Recoil](https://recoiljs.org/), and [Tailwind CSS](https://tailwindcss.com/).
@@ -42,16 +41,33 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ```
 ├── src/
-│   ├── App.jsx
-│   ├── main.jsx
-│   ├── index.css
-│   └── ...
+│   ├── main.jsx                  # app bootstrap (providers) + global CSS import
+│   ├── app/                      # app shell: router/layout/global styles
+│   │   ├── App.jsx
+│   │   ├── layout/
+│   │   └── styles/
+│   ├── features/                 # feature modules (pages + components + state)
+│   │   ├── home/
+│   │   ├── albums/
+│   │   ├── tracks/
+│   │   ├── player/
+│   │   └── voting/
+│   ├── shared/                   # cross-cutting reusable code
+│   │   ├── components/
+│   │   └── api/
 ├── public/
 ├── vite.config.js
 ├── tailwind.config.js
 ├── package.json
 └── README.md
 ```
+
+### Conventions
+
+- **App shell**: put global layout and routing in `src/app/`.
+- **Features**: keep feature-specific UI/state in `src/features/<feature>/`.
+- **Shared**: put reusable components/utilities in `src/shared/`.
+- **Imports**: prefer the `@` alias (e.g. `@/features/player/...`) over deep relative paths.
 
 ## Configuration Highlights
 
@@ -68,4 +84,3 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 ## License
 
 MIT
-

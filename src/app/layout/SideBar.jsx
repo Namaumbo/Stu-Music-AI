@@ -1,6 +1,6 @@
 import * as ciIcons from "react-icons/ci";
 import * as fiIcons from "react-icons/fi";
-import "./siderbar.css";
+import "./sidebar.css";
 import { NavLink } from "react-router-dom";
 
 export default function SideBar() {

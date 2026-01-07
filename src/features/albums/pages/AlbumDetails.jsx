@@ -1,13 +1,12 @@
 import { BiLike } from "react-icons/bi";
 import { SlUserFollow } from "react-icons/sl";
 export default function AlbumDetails() {
-  const bgButtonClasses = "bg-zinc-700 text-white px-3 py-1 rounded-md";
   const textGreenClasses = "text-gray-500";
   const tableItemClass = "pt-3 pb-3 px-4 text-[13px]";
   const tableHeader = "text-left font-[400] px-4";
   return (
     <>
-      <div className=" text-white p-4">
+      <div className="h-full overflow-y-auto text-white p-4">
         <div className="flex flex-row items-center  ">
           <div className="w-1/4">
             <img src="photo2.jpg" alt="Playlist Cover" className="rounded-lg" />

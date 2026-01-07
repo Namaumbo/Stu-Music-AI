@@ -1,4 +1,5 @@
-import "./track.css";
+import "../styles/track.css";
+/* eslint-disable react/prop-types */
 export default function Track({props}) {
   return (
     <div className="track-container lg:w-45 relative">

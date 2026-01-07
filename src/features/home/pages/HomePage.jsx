@@ -1,4 +1,4 @@
-import SliderComponet from "../components/Slider/SliderComponent";
+import SliderComponet from "@/features/tracks/components/SliderComponent.jsx";
 
 const Musictype = () => {
   const Genres = [
@@ -37,11 +37,12 @@ const Musictype = () => {
     </>
   );
 };
-export default function HomePage(params) {
+export default function HomePage() {
   return (
-    <div className="h-full bg-zinc-900 text-white ">
-      <div className="p-4">
-        <div className="flex justify-between items-center mb-4">
+    <div className="h-full bg-zinc-900 text-white flex flex-col overflow-hidden">
+      {/* pinned header (doesn't scroll) */}
+      <div className="p-4 shrink-0">
+        <div className="flex justify-between items-center">
           <div className="flex space-x-2">{Musictype()}</div>
           <div>
             <button className="px-4 py-2 bg-yellow-500 rounded">
@@ -49,12 +50,16 @@ export default function HomePage(params) {
             </button>
           </div>
         </div>
+      </div>
+
+      {/* only this section scrolls on Y axis */}
+      <div className="flex-1 overflow-y-auto px-4 pb-4 space-y-8">
         <div>
           <h2 className="text-2xl font-bold mb-4">Recently played</h2>
           <SliderComponet />
         </div>
 
-        <div className="mt-8">
+        <div>
           <h2 className="text-2xl font-bold mb-4">Jump back in</h2>
           <SliderComponet />
         </div>

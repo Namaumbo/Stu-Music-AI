@@ -1,8 +1,6 @@
-import React from "react";
-
 const RecentSongs = () => {
   return (
-    <div>
+    <div className="h-full overflow-y-auto">
       <div className="bg-background p-4">
         <h2 className="text-4xl font-bold text-foreground mb-4 text-white ">
           Recently Added
@@ -17,7 +15,7 @@ const RecentSongs = () => {
             <div className="p-2 ">
               <h3 className="font-semibold text-primary text-gray-500">Jazz Mix</h3>
               <p className="text-white font-semibold">
-                John C. O'Leary III, FORQ, Erik Pallian and more...
+                {"John C. O'Leary III"}, FORQ, Erik Pallian and more...
               </p>
             </div>
           </div>

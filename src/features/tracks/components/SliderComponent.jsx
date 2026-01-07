@@ -1,9 +1,8 @@
-import { useState } from "react";
-import Track from "../Track/Track";
-// import "./sliderStyle.css";
+import Track from "./Track";
+// import "../styles/slider.css";
 
 export default function SliderComponet() {
-  const [songList, setSongList] = useState([
+  const songList = [
     {
       id: 1,
       title: "Midnight Serenade",
@@ -52,7 +51,7 @@ export default function SliderComponet() {
       duration: "00:00",
       image: "image6.jpg",
     },
-  ]);
+  ];
 
   return (
     <>
