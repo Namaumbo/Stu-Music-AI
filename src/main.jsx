@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import "./index.css";
+import App from "@/app/App.jsx";
+import "@/app/styles/globals.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import { RecoilRoot } from "recoil";
 
