@@ -7,7 +7,11 @@ import HomePage from "@/features/home/pages/HomePage.jsx";
 import AlbumPage from "@/features/albums/pages/AlbumsPage.jsx";
 import VotingPage from "@/features/voting/pages/VotingPage.jsx";
 import RecentSongs from "@/features/tracks/pages/RecentSongs.jsx";
+import NewsPage from "@/features/news/pages/NewsPage.jsx";
+import NewsDetailPage from "@/features/news/pages/NewsDetailPage.jsx";
+import StudiosPage from "@/features/studios/pages/StudiosPage.jsx";
 
+/* eslint-disable react/prop-types */
 const ComingSoonPage = ({ title }) => {
   return (
     <div className="h-full overflow-y-auto bg-[#0d1117] text-white p-8">
@@ -107,11 +111,15 @@ const App = () => {
         },
         {
           path: "/studios",
-          element: <ComingSoonPage title="Studios" />,
+          element: <StudiosPage />,
         },
         {
           path: "/newsletter",
-          element: <ComingSoonPage title="News" />,
+          element: <NewsPage />,
+        },
+        {
+          path: "/newsletter/:slug",
+          element: <NewsDetailPage />,
         },
       ],
     },

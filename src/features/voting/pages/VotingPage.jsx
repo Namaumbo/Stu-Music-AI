@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilState } from "recoil";
 import {
   SongDescription,
   PlayingState,
