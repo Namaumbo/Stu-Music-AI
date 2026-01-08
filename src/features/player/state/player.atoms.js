@@ -10,9 +10,11 @@ export const PlayerAtom = atom({
 export const SongDescription = atom({
   key: "SongDescription",
   default: {
+    id: "",
     title: "",
     artist: "",
     artwork: "",
+    audioSrc: "",
   },
 });
 
@@ -63,5 +65,5 @@ export const GenreFilter = atom({
 
 export const PlayerState = atom({
   key: "PlayerState",
-  default: false,
+  default: true,
 });

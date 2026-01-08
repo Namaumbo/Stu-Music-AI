@@ -1,89 +1,80 @@
-import { Button } from "@chakra-ui/react";
-export default function VotingPage() {
+import { useMemo } from "react";
+import { useRecoilState, useRecoilValue } from "recoil";
+import {
+  SongDescription,
+  PlayingState,
+} from "@/features/player/state/player.atoms.js";
+import { VotesAtom } from "@/features/voting/state/votes.atom.js";
+import { VOTING_SONGS } from "@/features/voting/state/votingSongs.js";
+import SongCoverCard from "@/features/voting/components/SongCoverCard.jsx";
 
-  const tableItemClass = "pt-3 pb-3";
+export default function VotingPage() {
+  const [song, setSong] = useRecoilState(SongDescription);
+  const [isPlaying, setIsPlaying] = useRecoilState(PlayingState);
+  const [votes, setVotes] = useRecoilState(VotesAtom);
+
+  const songs = useMemo(() => VOTING_SONGS, []);
+  const totalVotes = useMemo(() => {
+    return songs.reduce((acc, s) => acc + (votes?.[s.id] ?? 0), 0);
+  }, [songs, votes]);
+
+  const playSong = (s) => {
+    setSong({
+      id: s.id,
+      title: s.title,
+      artist: s.artist,
+      artwork: s.coverSrc,
+      audioSrc: s.audioSrc,
+    });
+    setIsPlaying(true);
+  };
+
+  const voteSong = (s) => {
+    setVotes((prev) => {
+      const next = { ...(prev ?? {}) };
+      next[s.id] = (next[s.id] ?? 0) + 1;
+      return next;
+    });
+  };
 
   return (
     <>
-      <div className="h-full overflow-y-auto">
-      <main className="flex flex-col items-center justify-center  bg-[#0d1117] py-6">
-        <div className="max-w-md w-full space-y-8 px- md:px-0">
-          <div className="text-center">
-            <h1 className="text-5xl font-bold text-gray-100 dark:text-gray-100">
-              Vote for The Audio Track
-            </h1>
-            <p className="mt-4 text-lg text-gray-100 w-[20rem] m-[auto] dark:text-gray-400">
-              Cast your vote to support the artist for the music shoot out.
-            </p>
-          </div>
-          <div className=" bg-gray-900 rounded-lg shadow-md p-6 space-y-6">
-            <div className="flex items-center space-x-4">
-              <img
-                alt="Candidate"
-                className="rounded-md shadow-sm"
-                height={80}
-                src="photo2.jpg"
-                style={{
-                  aspectRatio: "80/80",
-                  objectFit: "cover",
-                }}
-                width={150}
-              />
-              <div>
-                <h2 className="text-xl font-bold text-gray-100 dark:text-gray-100">
-                  John Doe
-                </h2>
-                <p className="text-gray-100 dark:text-gray-400">
-                  Candidate for City Council
-                </p>
-              </div>
-            </div>
-            <div className="flex justify-between items-center">
-              <p className="text-gray-600 dark:text-gray-400">
-                Total Votes :
-                <span className=" pl-1 font-bold text-gray-100 dark:text-gray-100">
-                  123
-                </span>
+      <div className="h-full overflow-y-auto bg-[#0d1117] text-white">
+        <div className="px-6 py-8">
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+            <div>
+              <h1 className="text-4xl lg:text-5xl font-extrabold tracking-tight">
+                Vote for the Audio Tracks
+              </h1>
+              <p className="mt-3 text-zinc-400 max-w-2xl">
+                Browse the song covers below. Click a cover to play the track,
+                then vote either on the card or directly from the player while
+                it’s playing.
               </p>
-              <Button className="bg-blue-500 hover:bg-blue-600 w-[15rem] text-white font-bold py-2 px-6 rounded">
-                Vote
-              </Button>
             </div>
+
+            <div className="rounded-2xl border border-[#2b2b2b] bg-[#131314] px-5 py-4">
+              <p className="text-sm text-zinc-400">Total votes</p>
+              <p className="text-3xl font-extrabold">{totalVotes}</p>
+              <p className="text-xs text-zinc-500 mt-1">
+                (Saved on this device)
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6">
+            {songs.map((s) => (
+              <SongCoverCard
+                key={s.id}
+                song={s}
+                votes={votes?.[s.id] ?? 0}
+                isActive={song?.id === s.id && isPlaying}
+                onPlay={playSong}
+                onVote={voteSong}
+              />
+            ))}
           </div>
         </div>
-      </main>
-      <h4 className=" tracking-tighter text-2xl font-bold text-gray-200">
-        More Music from John Doe
-      </h4>
-      <div className="mt-6">
-        <table className="w-full text-zinc-400">
-          <thead className="border-b">
-            <tr>
-              <th className="text-left">#</th>
-              <th className="text-left">Title</th>
-              <th className="text-left">Album</th>
-              <th className="text-left">Date added</th>
-              <th className="text-left">Duration</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr className="hover:bg-gray-800 cursor-pointer">
-              <td className={tableItemClass}>1</td>
-              <td className={tableItemClass}>Kuli bwanji </td>
-              <td className={tableItemClass}>Praise and Harmony</td>
-              <td className={tableItemClass}>Jan 1, 2023</td>
-              <td className={tableItemClass}>3:21</td>
-            </tr>
-            <tr className="hover:bg-gray-800 cursor-pointer">
-              <td className={tableItemClass}>2</td>
-              <td className={tableItemClass}>Days of Elijah</td>
-              <td className={tableItemClass}>Praise and Harmony</td>
-              <td className={tableItemClass}>Jan 1, 2023</td>
-              <td className={tableItemClass}>3:21</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
       </div>
     </>
   );

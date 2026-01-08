@@ -9,34 +9,39 @@ export default function SideBar() {
       name: "Home",
       icon: <ciIcons.CiHome fontSize={23} color="#ffffff" />,
       path: "/",
-      count : 0
+      count: 0,
     },
     {
-      name:"Recently",
+      name: "Voting",
+      icon: <fiIcons.FiThumbsUp fontSize={21} color="#ffffff" />,
+      path: "/voting",
+      count: 0,
+    },
+    {
+      name: "Recently",
       icon: <ciIcons.CiHeadphones fontSize={23} color="#ffffff" />,
       path: "/recently-added",
-      count : 4
+      count: 4,
     },
     {
       name: "Albums",
       icon: <fiIcons.FiDisc fontSize={23} color="#ffffff" />,
       path: "/albums",
-      count: 0
+      count: 0,
     },
     {
       name: "Studios",
       icon: <fiIcons.FiSpeaker fontSize={23} color="#ffffff" />,
       path: "/studios",
-      count : 0
+      count: 0,
     },
     {
       name: "News",
       icon: <fiIcons.FiPaperclip fontSize={23} color="#ffffff" />,
       path: "/newsletter",
-      count : 6
+      count: 6,
     },
   ];
-
 
   return (
     <div className=" bg-[#131314] border-1 h-full pt-5">
@@ -60,7 +65,7 @@ export default function SideBar() {
                       {link["count"]} new
                     </div>
                   )}
-                  </div>
+                </div>
               </li>
             </NavLink>
           );
