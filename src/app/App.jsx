@@ -8,6 +8,15 @@ import AlbumPage from "@/features/albums/pages/AlbumsPage.jsx";
 import VotingPage from "@/features/voting/pages/VotingPage.jsx";
 import RecentSongs from "@/features/tracks/pages/RecentSongs.jsx";
 
+const ComingSoonPage = ({ title }) => {
+  return (
+    <div className="h-full overflow-y-auto bg-[#0d1117] text-white p-8">
+      <h1 className="text-4xl font-bold">{title}</h1>
+      <p className="mt-3 text-zinc-400">Coming soon.</p>
+    </div>
+  );
+};
+
 const Layout = () => {
   return (
     <div className="h-screen flex flex-col overflow-hidden">
@@ -89,12 +98,20 @@ const App = () => {
           element: <AlbumPage />,
         },
         {
-          path: "/:id",
+          path: "/voting",
           element: <VotingPage />,
         },
         {
           path: "/recently-added",
           element: <RecentSongs />,
+        },
+        {
+          path: "/studios",
+          element: <ComingSoonPage title="Studios" />,
+        },
+        {
+          path: "/newsletter",
+          element: <ComingSoonPage title="News" />,
         },
       ],
     },
