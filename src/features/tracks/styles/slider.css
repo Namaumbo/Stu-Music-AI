@@ -1,0 +1,55 @@
+/* For larger screens */
+#main-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+/* For medium screens, use 3 columns */
+@media (max-width: 1938px) {
+  #main-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width:1723px) {
+  #main-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width:1375px) {
+  #main-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width:1156px) {
+  #main-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width:942px) {}
+
+
+
+
+@media (max-width: 768px) {
+  #main-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* For small screens, use 2 columns */
+@media (max-width: 576px) {
+  #main-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* For extra small screens, stack the columns */
+@media (max-width: 400px) {
+  #main-container {
+    grid-template-columns: 1fr;
+  }
+}

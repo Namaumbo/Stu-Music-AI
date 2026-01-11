@@ -1,0 +1,74 @@
+
+.main-player {
+    height: 16%;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #222230ee;
+    display: flex;
+}
+
+.artwork-song-icon {
+    width: 43%;
+    border-radius: 10%;
+    object-fit: contain;
+    margin-bottom: 23%;
+
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.585); /* Horizontal offset, vertical offset, blur radius, color */
+
+}
+
+.artwork-song-info {
+    display: flex;
+    align-items: center;
+    flex: 0.3;
+    padding: 1%;
+
+}
+
+.info {
+    margin: 15px 0 0 10px;
+
+}
+
+.info span {
+    color: rgb(220, 220, 220);
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.controls {
+    flex: 1.6;
+    margin-top: 1em;
+    max-width: 45%;
+}
+
+.volume {
+    max-width: 15%;
+    flex: 0.8;
+    margin:2.5em 1em 0 2.5em
+}
+
+.btn-control {
+    display: inline;
+    cursor: pointer;
+}
+.btn-control {
+    transition: transform 0.2s ease;
+}
+
+.btn-control:hover {
+    transform: scale(1.1);
+}
+.btn-control{
+    margin: 0 0.5rem 0 0.5rem;
+}
+.btn-control:nth-child(3) {
+    margin: 0 1em 0 1em;
+}
+#cancel{
+    padding-top:10px;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;}
