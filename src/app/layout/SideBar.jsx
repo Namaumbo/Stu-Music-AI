@@ -12,6 +12,12 @@ export default function SideBar() {
       count: 0,
     },
     {
+      name: "Analysis",
+      icon: <fiIcons.FiCpu fontSize={21} color="#ffffff" />,
+      path: "/analysis",
+      count: 0,
+    },
+    {
       name: "Voting",
       icon: <fiIcons.FiThumbsUp fontSize={21} color="#ffffff" />,
       path: "/voting",

@@ -10,6 +10,7 @@ import RecentSongs from "@/features/tracks/pages/RecentSongs.jsx";
 import NewsPage from "@/features/news/pages/NewsPage.jsx";
 import NewsDetailPage from "@/features/news/pages/NewsDetailPage.jsx";
 import StudiosPage from "@/features/studios/pages/StudiosPage.jsx";
+import SongAnalysisPage from "@/features/analysis/pages/SongAnalysisPage.jsx";
 
 /* eslint-disable react/prop-types */
 const ComingSoonPage = ({ title }) => {
@@ -96,6 +97,10 @@ const App = () => {
         {
           path: "/",
           element: <HomePage />,
+        },
+        {
+          path: "/analysis",
+          element: <SongAnalysisPage />,
         },
         {
           path: "/albums",
